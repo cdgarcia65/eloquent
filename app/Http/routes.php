@@ -12,30 +12,48 @@
 */
 
 use App\User;
+use Faker\Factory as Faker;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('users/create', function () {
-	$user = User::create([
-		'name' => 'Natalia Mutis',
-		'email' => 'nathalyamutis@gmail.com',
-		'password' => bcrypt('secret'),
-		'gender' => 'm',
-		'biography' => 'Desarrollador PHP y Laravel'
-	]);
+    $faker = Faker::create();
 
-	return 'Usuario guardado';
+    $user = User::create([
+        'name' => $faker->name,
+        'email' => $faker->email,
+        'password' => bcrypt('secret'),
+        'gender' => $faker->randomElement(['f', 'm']),
+        'biography' => $faker->text(255)
+    ]);
+
+    return $user;
 });
 
-Route::get('users/update', function () {
-	$user = User::find(1);
+Route::get('users/{id}', function ($id) {
+    $user = User::find($id);
 
-	$user->gender = 'm';
-	$user->biography = 'Desarrollador PHP y Laravel';
-	
-	$user->save();
+    return $user;
+});
 
-	return 'Usuario actualizado';
+Route::get('users/update/{id}', function ($id) {
+    $faker = Faker::create();
+    $user = User::find($id);
+
+    $user->name = $faker->name;
+    $user->gender = $faker->randomElement(['f', 'm']);
+    $user->biography = $faker->text(255);
+    
+    $user->save();
+
+    return $user;
+});
+
+Route::get('users/delete/{id}', function ($id) {
+    $user = User::find($id);
+    $user->delete();
+
+    return 'User destroyed';
 });
