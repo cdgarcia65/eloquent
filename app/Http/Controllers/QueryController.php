@@ -11,10 +11,21 @@ use App\User;
 
 class QueryController extends Controller
 {
-    public function getAll()
+    public function eloquentAll()
     {
         $users = User::all();
+        $title = "Todos los usuarios (all)";
 
-        return view('query.all', compact('users'));
+        return view('query.methods', compact('users', 'title'));
+    }
+
+    public function eloquentGet($gender)
+    {
+        $users = User::where('gender', $gender)
+            ->get();
+
+        $title = "Todos los usuarios (get)";
+
+        return view('query.methods', compact('users', 'title'));
     }
 }
