@@ -6,6 +6,18 @@
             Todos los usuarios (all)
         </h1>
         
+        <p>
+            Método all(): Se utiliza para obtener todos los registros de la tabla especificada 
+            por el modelo, es decir, si el model es <strong>User</strong> se obtendrán todos los
+            registros de la tabla <strong>users</strong>
+        </p>
+        <ul>
+            <li>
+                <strong>User::all() = select * from users;</strong>
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            </li>
+        </ul>
+        <br>
         <table class="table table-hover table-striped">
             <thead>
                 <tr>
