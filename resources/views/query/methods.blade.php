@@ -37,6 +37,17 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <strong>Método get(['id', 'name', 'gender']) parámetros opcionales:</strong> El método get también recibe un array
+                    en el cual se especifican las columnas que queremos seleccionar de la tabla especificada por el modelo:
+                    <ul>
+                        <li>
+                            <strong>User::where('gender', 'f')<br>
+                                ->get(['id', 'name', 'gender']); = select id, name, gender from users where gender = 'f';
+                            </strong>
+                        </li>
+                    </ul>
+                </li>
             </li>
         </ul>
         <br>

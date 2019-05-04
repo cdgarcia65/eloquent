@@ -5,9 +5,9 @@
     <td>{{ $user->email }}</td>
     <td>
         @if ($user->gender == 'f')
-            <span class="label label-info">Female</span>
+            <span class="label label-info">Female ({{ $user->gender }})</span>
         @else
-            <span class="label label-primary">Male</span>
+            <span class="label label-primary">Male ({{ $user->gender }})</span>
         @endif
     </td>
     <td>{{ $user->biography }}</td>
