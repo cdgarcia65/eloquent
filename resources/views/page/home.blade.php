@@ -7,5 +7,27 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis quae ratione quis a error iure! Consequuntur molestias architecto itaque placeat totam, similique voluptatum incidunt aut, iusto iure fugit omnis debitis?</p>
         </div>
     </div>
-    Página del Home
+    <br>
+    <div class="container">        
+        <h1 class="page-header">
+            Últimos usuarios registrados
+        </h1>
+        
+        @include('partials.explanation')
+        <br>
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Biography</th>
+                </tr>
+            </thead>
+            <tbody>
+                @include('partials.list-users')
+            </tbody>
+        </table>
+    </div>
 @endsection
