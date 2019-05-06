@@ -63,4 +63,12 @@ class QueryController extends Controller
 
         return view('query.first-last', compact('user', 'last'));
     }
+
+    public function eloquentPaginate()
+    {
+        $users = User::orderBy('id', 'desc')
+            ->paginate();
+
+        return view('query.paginate', compact('users'));
+    }
 }
