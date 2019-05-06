@@ -16,15 +16,7 @@
         @include('partials.explanation')
         <br>
         <table class="table table-hover table-striped">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Email</th>
-                    <th>Gender</th>
-                    <th>Biography</th>
-                </tr>
-            </thead>
+            @include('partials.head-users')
             <tbody>
                 @include('partials.list-users')
             </tbody>

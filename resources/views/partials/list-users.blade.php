@@ -11,5 +11,14 @@
         @endif
     </td>
     <td>{{ $user->biography }}</td>
+    <td>
+        <form action="{{ route('delete', $user->id) }}" method="POST">
+            {{ method_field('DELETE') }}
+            {{ csrf_field() }}
+            <button class="btn btn-danger">
+                <i class="glyphicon glyphicon-trash"></i>
+            </button>
+        </form>
+    </td>
 </tr>
 @endforeach

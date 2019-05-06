@@ -69,5 +69,18 @@
                 </li>
             </ul>
         </li>
+        <li>
+            <strong>Método delete: </strong> Elimina un registro de la tabla, sin embargo, antes se debe obtener el 
+            modelo del cual se requiere eliminar el registro, y esto lo hacemos a través del método <strong>find($id)</strong>
+            pasando como parámetro a este método el id:
+            <ul>
+                <li>
+                    <strong>$user = User::find($id); <br>
+                        => select * from users where id = $id; <br>
+                        $user->delete(); => delete from users where id = $id;
+                    </strong>
+                </li>
+            </ul>
+        </li>
     </li>
 </ul>
