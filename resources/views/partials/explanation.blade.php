@@ -82,5 +82,28 @@
                 </li>
             </ul>
         </li>
+        <li>
+            <strong>Método lists: </strong> Para la tabla users obtiene un par de columnas (id, name), generalmente usado 
+            para el control <strong>select HTML</strong>:
+            <ul>
+                <li>
+                    <strong>$users = User::orderBy('name', 'asc') <br>
+                        ->lists('id', 'name');
+                    </strong>
+                    Esto retorna una colección con arrays con el par llave (name) valor (id), es decir, id corresponde al 
+                    identificador único por cada usuario y name corresponde a su nombre: <br>
+                    Collection {#258 <br>
+                        #items: array: 99 [<i class="glyphicon glyphicon-chevron-down"></i> <br>
+                            "Abbigail Upton" => 58... <br>
+                        ]
+                    } <br>
+                    Para hacer uso de esto en un select:
+                    select > <br>
+                    foreach ($users as $name => $id) <br>
+                        < option value="$id" > $name < / option > <br>
+                    endforeach
+                </li>
+            </ul>
+        </li>
     </li>
 </ul>

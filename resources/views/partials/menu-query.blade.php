@@ -16,5 +16,8 @@
         <li>
             <a href="{{ route('get-custom') }}">Todos los usuarios (Female - get custom con array)</a>
         </li>
+        <li>
+            <a href="{{ route('lists') }}">Lista de usuarios para un select (lists)</a>
+        </li>
     </ul>
 </li>
