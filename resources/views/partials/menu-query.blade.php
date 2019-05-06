@@ -19,5 +19,8 @@
         <li>
             <a href="{{ route('lists') }}">Lista de usuarios para un select (lists)</a>
         </li>
+        <li>
+            <a href="{{ route('first-last') }}">Primer y último registro de la tabla usuarios (First, Last)</a>
+        </li>
     </ul>
 </li>
